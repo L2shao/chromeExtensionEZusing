@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "EZusing",
+  "version": "1.0",
+  // 插件描述
+  "description": "自己用的小工具",
+  "icons": {
+    "16": "img/img.png",
+    "48": "img/img.png",
+    "128": "img/img.png"
+  },
+  "browser_action": {
+    "default_icon": "img/img.png",
+    "default_popup": "index.html",
+    "default_title": "平时便利使用的小功能" // 鼠标悬停时的显示文本
+  },
+  "background": {
+    // 如果指定JS，那么会自动生成一个背景页
+    "page": "background.html"
+  },
+  "content_scripts": [
+    // {
+      // "<all_urls>" 表示匹配所有地址, 这里也可以写其他类型文件
+      // "matches": ["https://www.baidu.com/*"],
+      // "document_start", "document_end", or "document_idle" document_idle表示页面空闲插入
+      // "run_at": "document_start",
+      // "js": ["js/baidu.js"]
+    // },
+    {
+      "matches": ["https://blog.csdn.net/*"],
+      "css": ["styles/csdn.css"]
+    },
+    {
+      "matches": ["https://stackoverflow.com/*"],
+      "css": ["styles/so.css"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "notifications",
+    "contextMenus",
+    "tabs"
+  ],
+  "options_ui":
+  {
+    "page": "options.html",
+    // 添加一些默认的样式
+    "chrome_style": true
+  }
+  // 覆盖浏览器默认页面
+}
