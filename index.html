@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="styles/common.css">
 </head>
 <body>
 <div id="app">
-    李聪的插件
+  <div id="form">
+    <div class="row">
+      <label for="account">账号:</label>
+      <input id="account" type="text" name="account"/>
+    </div>
+    <div class="row">
+      <label for="pwd">密码:</label>
+      <input id="pwd" type="password" name="pwd"/>
+    </div>
+    <div class="row">
+      <label for="secretKey">secretKey:</label>
+      <input id="secretKey" type="text" name="secretKey"/>
+    </div>
+  </div>
+  
+  <div class="row">
+    <label></label>
+    <button id="save"> 保存 </button>
+    <button id="clear"> 清空 </button>
+    <button id="hide"> 隐藏 </button>
+  </div>
 </div>
+<style>
+  #app {
+    display: flex;
+    width: 300px;
+    max-height: 500px;
+    flex-direction: column;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .row label {
+    width: 60px;
+  }
+  .row button+button{
+    margin-left: 6px;
+  }
+</style>
+<script type="text/javascript" src="js/lib/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
 </body>
 </html>

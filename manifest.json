@@ -19,13 +19,13 @@
     "page": "background.html"
   },
   "content_scripts": [
-    // {
-      // "<all_urls>" 表示匹配所有地址, 这里也可以写其他类型文件
-      // "matches": ["https://www.baidu.com/*"],
-      // "document_start", "document_end", or "document_idle" document_idle表示页面空闲插入
-      // "run_at": "document_start",
-      // "js": ["js/baidu.js"]
-    // },
+     {
+       //"<all_urls>" 表示匹配所有地址, 这里也可以写其他类型文件
+       "matches": ["https://www.baidu.com/*"],
+       // "document_start", "document_end", or "document_idle" document_idle表示页面空闲插入
+       "run_at": "document_end",
+       "js": ["js/lib/jsOTP.js", "js/baidu.js"]
+     },
     {
       "matches": ["https://blog.csdn.net/*"],
       "css": ["styles/csdn.css"]
